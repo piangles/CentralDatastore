@@ -10,7 +10,7 @@ DECLARE
   v_authorized BOOLEAN;
 BEGIN
 
-	SELECT EXISTS(SELECT 1 FROM central.hosts  WHERE hosts.host_name=p_host_name) INTO v_authorized;
+	SELECT EXISTS(SELECT 1 FROM central.hosts  WHERE host_name=p_host_name) INTO v_authorized;
 
 	RETURN v_authorized;
 END

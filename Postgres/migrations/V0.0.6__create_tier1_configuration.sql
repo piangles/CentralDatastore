@@ -6,7 +6,7 @@ CREATE TABLE central.tier1_configuration
 	updated_ts TIMESTAMP NOT NULL,
 	
 	environment varchar(3) NOT NULL,
-	serviceName varchar(50) NOT NULL,
+	service_name varchar(50) NOT NULL,
 	name varchar(250) NOT NULL,
 	value varchar(1000) NOT NULL
 );

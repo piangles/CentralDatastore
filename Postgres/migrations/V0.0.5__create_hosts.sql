@@ -8,7 +8,7 @@ CREATE TABLE central.hosts
 	environment varchar(3) NOT NULL, --Values will be DEV,QAT,UAT,PRD
 	type varchar(25) NOT NULL,
 	purpose varchar(25) NOT NULL, 
-	host_hame varchar(255)  NOT NULL,
+	host_name varchar(255)  NOT NULL,
 	description varchar(1000)  NOT NULL
 );
 CREATE TRIGGER updated_ts_trigger BEFORE INSERT OR UPDATE ON central.hosts FOR EACH ROW EXECUTE PROCEDURE  public.update_updated_ts();
