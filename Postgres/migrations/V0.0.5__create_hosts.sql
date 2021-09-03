@@ -5,10 +5,10 @@ CREATE TABLE central.hosts
 	inserted_ts TIMESTAMP NOT NULL DEFAULT NOW(),
 	updated_ts TIMESTAMP NOT NULL,
 
-	environment varchar(3) NOT NULL, --Values will be DEV,QAT,UAT,PRD
-	type varchar(25) NOT NULL,
-	purpose varchar(25) NOT NULL, 
-	hostname varchar(255)  NOT NULL,
-	description varchar(1000)  NOT NULL
+	environment VARCHAR(3) NOT NULL, --Values will be DEV,QAT,UAT,PRD
+	type VARCHAR(25) NOT NULL,
+	purpose VARCHAR(25) NOT NULL, 
+	hostname VARCHAR(255)  NOT NULL,
+	description VARCHAR(1000)  NOT NULL
 );
 CREATE TRIGGER updated_ts_trigger BEFORE INSERT OR UPDATE ON central.hosts FOR EACH ROW EXECUTE PROCEDURE  public.update_updated_ts();

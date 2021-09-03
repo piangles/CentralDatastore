@@ -4,10 +4,10 @@ CREATE TABLE central.audit_central
 	id SERIAL NOT NULL PRIMARY KEY,
 	inserted_ts TIMESTAMP NOT NULL DEFAULT NOW(),
 
-	remote_address varchar(50)  NOT NULL,
-	remote_host varchar(255)  NOT NULL,
+	remote_address VARCHAR(50)  NOT NULL,
+	remote_host VARCHAR(255)  NOT NULL,
 	remote_port INT NOT NULL,
-	remote_user varchar(50)  NULL,
-	requested_service_name varchar(50) NULL,
-	requested_value varchar(250) NULL
+	remote_user VARCHAR(50)  NULL,
+	requested_service_name VARCHAR(50) NULL,
+	requested_value VARCHAR(250) NULL
 );
