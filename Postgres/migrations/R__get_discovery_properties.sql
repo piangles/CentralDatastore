@@ -2,7 +2,7 @@ DROP FUNCTION IF EXISTS central.get_discovery_properties;
 
 CREATE FUNCTION central.get_discovery_properties 
 (
-	IN p_host_name VARCHAR(255),
+	IN p_hostname VARCHAR(255),
 	IN p_service_name VARCHAR(255)
 ) 
 RETURNS TABLE (name VARCHAR(250), value VARCHAR(1000))
@@ -11,7 +11,7 @@ AS $$
 BEGIN
     
 	--Check if the Host is authorized need a separate point or return value.
-	SELECT hosts.environment INTO v_environment FROM central.hosts hosts WHERE hosts.host_name=p_host_name;
+	SELECT hosts.environment INTO v_environment FROM central.hosts hosts WHERE hosts.hostname=p_hostname;
 
 	--call DebugLog(Environment);
 	
