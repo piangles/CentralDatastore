@@ -2,7 +2,7 @@ DROP FUNCTION IF EXISTS central.get_tier1_configuration;
 
 CREATE FUNCTION central.get_tier1_configuration 
 (
-	IN p_host_name VARCHAR(255),
+	IN p_hostname VARCHAR(255),
 	IN p_service_name VARCHAR(255)
 ) 
 RETURNS TABLE (name VARCHAR(250), value VARCHAR(1000))
@@ -10,7 +10,7 @@ AS $$
 	DECLARE v_environment VARCHAR(3);
 BEGIN
     
-	SELECT hosts.environment INTO v_environment FROM central.hosts hosts WHERE hosts.host_name=p_host_name;
+	SELECT hosts.environment INTO v_environment FROM central.hosts hosts WHERE hosts.hostname=p_hostname;
 
 	--call DebugLog(Environment);
 	RETURN QUERY

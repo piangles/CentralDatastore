@@ -25,13 +25,13 @@ BEGIN
 	IF pEncryptedCategory = 'Discovery' THEN
 		SELECT COUNT(*) INTO vEncryptedRowCount FROM Central.Discovery discovery  WHERE 
 		discovery.Environment = vEnvironment and 
-		discovery.ServiceName = pServiceName and
+		discovery.Service_Name = pServiceName and
 		discovery.Name = pEncryptedValueName and
 		discovery.Value = pEncryptedValue;
 
 		SELECT COUNT(*) INTO vCipherRowCount FROM Central.Discovery discovery  WHERE 
 		discovery.Environment = vEnvironment and 
-		discovery.ServiceName = pServiceName and
+		discovery.Service_Name = pServiceName and
 		discovery.Name = pCipherAuthorizationIdName and
 		discovery.Value = pCipherAuthorizationId;
 		
@@ -39,13 +39,13 @@ BEGIN
     ELSEIF pEncryptedCategory = 'Configuration' THEN
     	SELECT COUNT(*) INTO vEncryptedRowCount FROM Central.Tier1Configuration tier1Config WHERE 
 		tier1Config.Environment = vEnvironment and 
-		tier1Config.ServiceName = pServiceName and    	
+		tier1Config.Service_Name = pServiceName and    	
 		tier1Config.Name = pEncryptedValueName and
 		tier1Config.Value = pEncryptedValue;
 		
 		SELECT COUNT(*) INTO vCipherRowCount FROM Central.Tier1Configuration tier1Config WHERE 
 		tier1Config.Environment = vEnvironment and 
-		tier1Config.ServiceName = pServiceName and
+		tier1Config.Service_Name = pServiceName and
 		tier1Config.Name = pCipherAuthorizationIdName and
 		tier1Config.Value = pCipherAuthorizationId;
 		
