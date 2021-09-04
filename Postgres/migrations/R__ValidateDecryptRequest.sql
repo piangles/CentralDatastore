@@ -37,13 +37,13 @@ BEGIN
 		
 		RowCount := vEncryptedRowCount + vCipherRowCount;
     ELSEIF pEncryptedCategory = 'Configuration' THEN
-    	SELECT COUNT(*) INTO vEncryptedRowCount FROM Central.Tier1Configuration tier1Config WHERE 
+    	SELECT COUNT(*) INTO vEncryptedRowCount FROM Central.Tier1_Configuration tier1Config WHERE 
 		tier1Config.Environment = vEnvironment and 
 		tier1Config.Service_Name = pServiceName and    	
 		tier1Config.Name = pEncryptedValueName and
 		tier1Config.Value = pEncryptedValue;
 		
-		SELECT COUNT(*) INTO vCipherRowCount FROM Central.Tier1Configuration tier1Config WHERE 
+		SELECT COUNT(*) INTO vCipherRowCount FROM Central.Tier1_Configuration tier1Config WHERE 
 		tier1Config.Environment = vEnvironment and 
 		tier1Config.Service_Name = pServiceName and
 		tier1Config.Name = pCipherAuthorizationIdName and
